@@ -103,21 +103,65 @@ function operadoresLogicos() {
 //6. Escribe un programa que calcule el área de un triángulo. Solicita al usuario la base y la altura, y utiliza el operador de multiplicación (*) y 
 // división (/).
 
-function areaTriangulo() {
-    let b = prompt("Escriba la base del triángulo: ");
-    let h = prompt("Escriba la altura del triángulo: ");
-    let pi = Math.pi;
-    console.log(pi);
+function areaTriangulo(b,h) {
+    return area = b * h / 2;
 }
 
-areaTriangulo();
+//console.log(areaTriangulo(10,5));
 
 //7. Declara una variable con un número inicial y utiliza operadores de incremento (++) y decremento (--) para modificar su valor. Muestra el resultado después de cada operación.
 
+function incrementoDecremento(n) {
+    console.log(n);
+    n++;
+    n++;
+    n++;
+    n++;
+    n++;
+    console.log(n + " (+5)");
+    n--;
+    n--;
+    n--;
+    console.log(n + " (-3)");
+}
+
+//incrementoDecremento(5);
+
 //8. Crea un programa que convierta una cantidad de minutos ingresada por el usuario en segundos utilizando el operador de multiplicación (*).
+
+function minutosASegundos(minutos) {
+    return segundos = minutos * 60;
+}
+
+console.log(minutosASegundos(2) + "s");
 
 //9. Escribe un programa que determine si un número ingresado por el usuario es divisible entre 3 y 5 utilizando operadores lógicos y el operador módulo (%).
 
-//10. Declara una variable con un valor numérico y utiliza el operador ternario para determinar si el número es positivo, negativo o cero. Muestra el resultado en la consola.
+function divisibilidad(num) {
+    if (num <= 0){
+        return "Introduzca un número positivo mayor que 0";
+    }else if(num % 5 === 0 && num % 3 === 0) {
+        return "Es divisible entre 3 y entre 5";
+    } else if (num % 5 === 0 && !num % 3 === 0) {
+        return "Es divisible entre 5";
+    } else if (!num % 5 === 0 && num % 3 === 0) {
+        return "Es divisible entre 3";
+    } else {
+        return "No es divisible ni entre 3 ni entre 5";
+    }
+    
+    
+}
 
+console.log(divisibilidad(15));
+
+//10. Declara una variable con un valor numérico y utiliza el operador ternario para determinar si el número es positivo, negativo o cero. 
+// Muestra el resultado en la consola.
+
+function esPositivo(num) {
+    let resultado = (num >= 0) ? "Positivo" : "Negativo";
+    return resultado;
+}
+
+console.log(esPositivo())
 
