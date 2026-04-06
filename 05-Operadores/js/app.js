@@ -14,18 +14,26 @@ function operarNumeros() {
     let num2 = prompt("Introduzca otro número");
     num2 = parseInt(num2);
 
-    suma = num1 + num2;
-    resta = num1 - num2;
-    multiplicacion = num1 * num2;
-    division = num1 / num2;
-
+    // si no pones antes de las variables let o const, estas se declaran como globales
+    const suma = num1 + num2;
+    const resta = num1 - num2;
+    const multiplicacion = num1 * num2;
+    
     console.log ("Suma: " + suma);
     console.log ("Resta: " + resta);
     console.log ("Multiplicación: " + multiplicacion);
-    console.log ("División: " + division);
+    
+    //antes de realizar una división tienes que comprobar que no sea división por cero
+    //la división por cero da un error
+    if (num2 === 0) {
+        console.log("División: no se puede dividir entre cero.");
+    } else {
+        const division = num1 / num2;
+        console.log ("División: " + division);
+    }
 }
-
 //operarNumeros();
+
 
 //2. Escribe un programa que determine si un número ingresado por el usuario es par o impar utilizando el operador módulo (%).
 
@@ -159,9 +167,20 @@ console.log(divisibilidad(15));
 // Muestra el resultado en la consola.
 
 function esPositivo(num) {
+    //solo compruebas si es positivo o negativo, el ejercicio pide positivo, negativo o cero
     let resultado = (num >= 0) ? "Positivo" : "Negativo";
     return resultado;
 }
 
+//realizas la llamada a la función sin argumento y la función espera un número
 console.log(esPositivo())
+
+function esPositivo2(numero){
+    let resultado = numero > 0 ? "Positivo" : numero < 0 ? "Negativo" : "Cero";
+    return resultado;
+}
+
+console.log(esPositivo2(3));
+console.log(esPositivo2(-3));
+console.log(esPositivo2(0));
 

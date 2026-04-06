@@ -84,7 +84,7 @@ function esFinito(){
     console.log(isFinite(numero)); // Esta opción si convierte Strings
 }
 
-//esFinito();
+esFinito();
 
 // Ejercicio 6
 
@@ -137,12 +137,21 @@ function dosDecimales() {
     console.log(numero.toFixed(2));
 }
 
-//dosDecimales();
+dosDecimales();
 
 // Ejercicio 9
 
 function minimosMaximos() {
     let array = [1,2,3,4,5,6,7,8,9,10];
+    //Hay que utilizar ... porque las funciones Math.max() y Math.min() esperan una lista de argumentos de números sueltos tipo Math.min(2,4,6,3)
+    //El operador spread ... desempaqueta el array y pasa cada elemento como un argumento separado
+
+    // let array = [1, 2, 3, 4, 5];
+
+    // Math.min(...array)
+    // es equivalente a escribir:
+    // Math.min(1, 2, 3, 4, 5)
+    
     console.log(Math.max(...array));
     console.log(Math.min(...array)); // Duda porque hay que usar "..."
 }
@@ -155,6 +164,8 @@ function calcularMaxMin(numeros) {
 
     //comprobar que los elementos del array sean número
     //numeros.every() es uina función para los arrays que es un bucle que implementa para cada elemento del array lo que haya entre los paréntesis
+
+    //Devuelve true si todos pasan la prueba y si uno falla para y devuelve false
     if(!numeros.every(Number.isFinite)){
         return "El array contiene valores no numéricos";
     }
